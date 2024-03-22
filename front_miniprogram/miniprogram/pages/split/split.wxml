@@ -1,0 +1,39 @@
+<view class="page-background">
+  <image src="../../static/left_2.png" style="height:28px;width:28px;margin-top:8%;margin-left:0%;" bindtap="back"></image>
+  
+  <!-- <image src="../../static/mine.png" style="height: 35px;width: 30px;margin-top:14%;margin-left: 60%;" bindtap="toMine"></image>
+   -->
+   <image src="../../static/mine_2.png" style="height:28px;width:28px;margin-top:14%;margin-left:56%;border-radius:40px;border:0.5px solid rgba(0, 0, 0, 0.5);wxcs_style_border:1rpx solid rgba(0, 0, 0, 0.5);" bindtap="toMine"></image>
+  
+  <view class="navbar">
+    <text class="title active">上传图片</text>
+    <text class="title">书法风格</text>
+    <text class="title">书法评分</text>
+  </view>
+
+  <view class="navbar">
+    <div class="dot active"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+  </view>
+
+  <image src="{{uploadBase64}}" class="uploadImage" mode="aspectFit" bindtap="jump" />
+
+  <view class="text">滑动选择需要评分的书法字</view>
+
+  <scroll-view scroll-x="true" style="width: 80%;margin: auto;margin-top:5%;">
+    <view class='FrameImgContainer'>
+      <image 
+        wx:for="{{character}}" 
+        src="{{item.src}}" 
+        bindtap="onFrameSelect" 
+        data-idx='{{item.id}}' 
+        data-imgsrc="{{item.src}}" 
+        class="{{currentImageIndex==item.id ? 'selected-frame-img':'frame-img'}}" 
+      />
+    </view>
+  </scroll-view>
+
+  <view class="card" mode="aspectFit" bindtap="confirmed">确认</view>
+  <!-- <view class="card_return_last" mode="aspectFit" bindtap="back">返回上一页</view> -->
+</view>
