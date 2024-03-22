@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <style>
+    #popupContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      display: none;
+      z-index: 999;
+    }
+
+    #closeBtn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      color: #fff;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    #popupContainer img {
+      width: 50%;
+      height: 50%;
+      object-fit: contain;
+    }
+
+    .showcontainer {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .div-left {
+      display: flex;
+      flex: 1;
+      padding: 20px;
+      align-items: center;
+    }
+
+    .div-right {
+      display: flex;
+      flex: 1;
+      padding: 20px;
+      align-items: center;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      align-items: center;
+    }
+
+    .zoom {
+      transition: transform .2s;
+      display: flex;
+      overflow: hidden;
+    }
+
+    .zoom:hover {
+      transform: scale(2);
+    }
+  </style>
+
+  <title>云墨济心</title>
+
+  <!-- Bootstrap Core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom Fonts -->
+  <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic"
+    rel="stylesheet" type="text/css">
+  <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link href="css/stylish-portfolio.min.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+  <!-- Navigation -->
+  <a class="menu-toggle rounded" href="#">
+    <i class="fa fa-bars"></i>
+  </a>
+  <nav id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+      <li class="sidebar-brand">
+        <a class="js-scroll-trigger" href="#page-top">云墨济心</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="js-scroll-trigger" href="#page-top">首页</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="js-scroll-trigger" href="#about">项目介绍</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="js-scroll-trigger" href="#services">使用流程</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="js-scroll-trigger" href="#achievements">成果展示</a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Header -->
+  <header class="masthead d-flex">
+    <div class="container text-center my-auto">
+      <h1 class="mb-1">云墨济心</h1>
+      <h3 class="mb-5">
+        <em>面向书写风格的汉字识别系统</em>
+      </h3>
+      <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">项目介绍</a>
+      <button id="experienceBtn" onclick="showPopup()" class="btn btn-xl btn-light mr-4">立即体验</button>
+    </div>
+  </header>
+
+  <!-- About -->
+  <section class="content-section bg-light" id="about">
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <h2>项目介绍</h2>
+          <div class="showcontainer">
+            <div class="div-left"><!-- <p class="lead mb-5"> -->
+              <p class="lead mb-5">
+                面向书写风格的汉字识别系统（项目编号：X2023057）的研究致力于设计出不但能识别训练集见过的汉字风格，还能够在不重新训练的情况下识别、拒识和发现训练集未见过的新风格的识别算法，对当下考古新文字的发现、识别及归类，博物馆对书法作品等的处理、归类，对设计师设计新字体和已有字体的识别、归类等多种对书法风格有需求的应用领域做出贡献，提升汉字书写风格识别的效率。
+              </p>
+            </div>
+            <div class="div-right zoom">
+              <img src="img/show-right.png" alt=""></a>
+            </div>
+          </div>
+          <div class="showcontainer">
+            <div class="div-left zoom">
+              <img src="img/show-left.jpg" alt=""></a>
+            </div>
+            <div class="div-right">
+              <p class="lead mb-5">
+                “形神兼备”的楷书辅助评价系统项目（项目编号：X2023057）旨在探寻并定量分析中国书法中楷书的“神韵”所在，即运用深度学习、图形学等方法解析书法汉字结构和作品风格中的高低维特征，拟开发一个针对楷书初学者从“形似”“神似”两方面提供智能评价的指导网站，缓解当下书法师资队伍短缺的问题，为初学者提升技法、揣摩中国书法的神韵提供帮助，以促进中国书法的传承发扬。
+              </p>
+            </div>
+          </div>
+          <br><br>
+          <a class="btn btn-dark btn-xl js-scroll-trigger" href="#services">使用流程</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="content-section bg-primary text-white text-center" id="services">
+    <div class="container">
+      <div class="content-section-heading">
+        <!-- <h3 class="text-secondary mb-0">项目成果</h3> -->
+        <h2 class="mb-5">使用流程</h2>
+      </div>
+      <div class="row">
+        <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+          <!-- <span class="service-icon rounded-circle mx-auto mb-3">
+            <i class="icon-screen-smartphone"></i>
+          </span> -->
+          <h4>
+            <strong>首页</strong>
+          </h4>
+          <img src="img/step-1.png" width="100%">
+          <p class="text-faded mb-0">
+            小程序首页，有上传单字或者上传习作两种选择
+          </p>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+          <!-- <span class="service-icon rounded-circle mx-auto mb-3">
+            <i class="icon-pencil"></i>
+          </span> -->
+          <h4>
+            <strong>上传习作</strong>
+          </h4>
+          <img src="img/step-2.png" width="100%">
+          <p class="text-faded mb-0">
+            如果选择上传习作，小程序会自动将习作按照单个字体进行切割，再让使用者选择需要进行评分的书法字
+          </p>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
+          <!-- <span class="service-icon rounded-circle mx-auto mb-3">
+            <i class="icon-like"></i>
+          </span> -->
+          <h4>
+            <strong>书法风格</strong>
+          </h4>
+          <img src="img/step-3.png" width="100%">
+          <p class="text-faded mb-0">
+            书法风格界面能够识别出书法字并按照可能性给出3种可能的书法风格。如果识别出的汉字错误，可以点击“识别错误？”进行修改
+          </p>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <!-- <span class="service-icon rounded-circle mx-auto mb-3">
+            <i class="icon-mustache"></i>
+          </span> -->
+          <h4>
+            <strong>书法评分</strong>
+          </h4>
+          <img src="img/step-4.png" width="100%">
+          <p class="text-faded mb-0">
+            书法评分界面能够给出对传入的书法字的评分和神韵相似度，并提出相对应的修改意见
+          </p>
+        </div>
+      </div>
+      <br><br>
+      <a class="btn btn-dark btn-xl js-scroll-trigger" href="#achievements">项目成果</a>
+    </div>
+  </section>
+
+  <!-- Callout -->
+  <section class="callout" id="achievements">
+    <div class="container text-center">
+      <!-- <h2 class="mx-auto mb-5">实现
+        <em style="color:#f39595">开放环境下</em>
+        面向书写风格的汉字识别，在
+        <em style="color:#21252970">研究方法</em>
+        和
+        <em style="color:rgb(177, 238, 230)">研究成果</em>
+        上取得创新和突破
+      </h2> -->
+      <h2 class="mx-auto mb-5">项目成果</h2>
+      <h3 class="mx-auto mb-5">基于微信小程序“云墨济心”的智能书法评价平台</h3>
+      <h3 class="mx-auto mb-5">2023全球人工智能算法创新挑战赛国赛一等奖</h3>
+      <h3 class="mx-auto mb-5">第九届同济大学创新创业论坛成长组一等奖</h3>
+      <h3 class="mx-auto mb-5">同济大学第十八届“挑战杯”校决赛一等奖</h3>
+      <h3 class="mx-auto mb-5">专利《一种面向楷体书法形神特征的评分系统》（国家专利局审核中）</h3>
+      <br><br>
+      <!-- <a class="btn btn-dark btn-xl js-scroll-trigger" href="#portfolio">成果展示</a> -->
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <!-- <a class="portfolio-item" href="#"> -->
+  <!-- <section class="content-section" id="portfolio">
+    <div class="container">
+      <div class="content-section-heading text-center">
+        <h3 class="text-secondary mb-0">面向书写风格的汉字识别系统</h3>
+        <h2 class="mb-5">成果展示</h2>
+      </div>
+      <div class="row no-gutters">
+        <div class="col-lg-6">
+          <a class="portfolio-item">
+            <span class="caption">
+              <span class="caption-content">
+                <h2>小程序</h2>
+                <p class="mb-0">实现小程序“云墨济心”</p>
+              </span>
+            </span>
+            <img class="img-fluid" src="img/portfolio-1.jpg" alt="">
+          </a>
+        </div>
+        <div class="col-lg-6">
+          <a class="portfolio-item">
+            <span class="caption">
+              <span class="caption-content">
+                <h2>模型搭建</h2>
+                <p class="mb-0">提取书法字特征并实现原型网络分类。</p>
+              </span>
+            </span>
+            <img class="img-fluid" src="img/portfolio-2.jpg" alt="">
+          </a>
+        </div>
+        <div class="col-lg-6">
+          <a class="portfolio-item">
+            <span class="caption">
+              <span class="caption-content">
+                <h2>后端管理</h2>
+                <p class="mb-0">进行后端开发、维护以及调试、测试</p>
+              </span>
+            </span>
+            <img class="img-fluid" src="img/portfolio-3.jpg" alt="">
+          </a>
+        </div>
+        <div class="col-lg-6">
+          <a class="portfolio-item">
+            <span class="caption">
+              <span class="caption-content">
+                <h2>展示4</h2>
+                <p class="mb-0">展示4的介绍</p>
+              </span>
+            </span>
+            <img class="img-fluid" src="img/portfolio-4.jpg" alt="">
+          </a>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- 弹出框容器 -->
+  <div id="popupContainer">
+    <img src="img/QR-code.jpg" alt="Experience Image">
+    <span id="closeBtn" onclick="closePopup()">x</span>
+  </div>
+
+  <script>
+    // 显示弹出框
+    function showPopup() {
+      document.getElementById('popupContainer').style.display = 'flex';//flex
+    }
+    // 关闭弹出框 
+    function closePopup() {
+      document.getElementById('popupContainer').style.display = 'none';
+    }
+  </script>
+
+  <!-- Footer -->
+  <footer class="footer text-center">
+    <div class="container">
+      <p class="text-muted small mb-0">云墨济心 &copy; <a target="_blank" href="https://cxcy.tongji.edu.cn/"
+          title="cxcy官网">同济大学大学生创新创业训练计划项目</a></p>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded js-scroll-trigger" href="#page-top">
+    <i class="fa fa-angle-up"></i>
+  </a>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/stylish-portfolio.min.js"></script>
+
+</body>
+
+</html>
